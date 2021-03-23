@@ -5,14 +5,57 @@
  */
 package sk.stu.fiit.models;
 
+import java.awt.image.BufferedImage;
+import java.util.List;
+
 /**
  *
  * @author jarni
  */
 public class Employer {
-    String name;
-    //oblast
-    int numEmployees;
-    // image logo
+    private String name;
+    private String area;
+    private int numEmployees;
+    private BufferedImage logo;
+    
+    public Employer(String name, String area, int numEmployees, BufferedImage logo) {
+        this.name = name;
+        this.area = area;
+        this.numEmployees = numEmployees;
+        this.logo = logo;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getArea() {
+        return area;
+    }
+
+    public void setArea(String area) {
+        this.area = area;
+    }
+
+    public int getNumEmployees() {
+        return numEmployees;
+    }
+
+    public void setNumEmployees(int numEmployees) {
+        this.numEmployees = numEmployees;
+    }
+
+    public BufferedImage getLogo() {
+        return logo;
+    }
+
+    public void setLogo(BufferedImage logo) {
+        this.logo = logo;
+    }
+    
     
 }

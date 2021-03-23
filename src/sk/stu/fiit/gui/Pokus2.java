@@ -5,6 +5,10 @@
  */
 package sk.stu.fiit.gui;
 
+import java.awt.Component;
+import java.util.List;
+import javax.swing.JFileChooser;
+
 /**
  *
  * @author jarni
@@ -16,6 +20,20 @@ public class Pokus2 extends javax.swing.JFrame {
      */
     public Pokus2() {
         initComponents();
+        //System.out.println(myFileChooser.getComponents());
+        Component[] components = myFileChooser.getComponents();
+        
+        for (Component comp: components){
+            System.out.println(comp.getClass());
+        }
+        
+        int returnVal = myFileChooser.showOpenDialog(new MainWindow());
+        /*if(returnVal == JFileChooser.APPROVE_OPTION) {
+           System.out.println("You chose to open this file: " +
+                myFileChooser.getSelectedFile().getName());
+        }*/
+        Pokus pokus = new Pokus();
+        getContentPane().add(pokus);
     }
 
     /**
@@ -30,11 +48,20 @@ public class Pokus2 extends javax.swing.JFrame {
         myFileChooser = new javax.swing.JFileChooser();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        getContentPane().add(myFileChooser, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 80, 620, -1));
+
+        myFileChooser.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                myFileChooserMouseReleased(evt);
+            }
+        });
+        getContentPane().add(myFileChooser, java.awt.BorderLayout.CENTER);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void myFileChooserMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_myFileChooserMouseReleased
+        System.out.println("nieco vypisem");        // TODO add your handling code here:
+    }//GEN-LAST:event_myFileChooserMouseReleased
 
     /**
      * @param args the command line arguments
@@ -72,8 +99,8 @@ public class Pokus2 extends javax.swing.JFrame {
     }
     
     private void daco(){
-        myFileChooser.getSelectedFile();
-        
+        System.out.println(myFileChooser.getSelectedFile().getAbsolutePath());
+        System.out.println(myFileChooser.getComponent(0));
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
