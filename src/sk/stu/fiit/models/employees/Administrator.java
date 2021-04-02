@@ -7,6 +7,7 @@ package sk.stu.fiit.models.employees;
 
 import java.util.ArrayList;
 import java.util.List;
+import sk.stu.fiit.models.JobOffer;
 
 /**
  *
@@ -16,7 +17,9 @@ public class Administrator extends Specialist{
     private String area;
     private String platform;
     
-    public Administrator(double manDay, double experience, Education education, List<String> certificates, String area, String platform) {
+    public Administrator(String name, String nationality, double manDay, double experience, Education education, List<String> certificates, String area, String platform) {
+        this.name = name;
+        this.nationality = nationality;
         this.manDay = manDay;
         this.experience = experience;
         this.education = education;
@@ -48,10 +51,12 @@ public class Administrator extends Specialist{
         this.platform = platform;
     }
     
+    @Override
     public String[] rowsTable(){
         return new String[] {String.valueOf(manDay), String.valueOf(experience), education.toString(), area, platform};
     }
     
+    @Override
     public List<String> columnsTable(){
         List<String> columns = new ArrayList<String>();
         
@@ -62,6 +67,27 @@ public class Administrator extends Specialist{
         columns.add("Platforma");
 
         return columns;
+    }
+
+    @Override
+    public boolean goodForPosition(JobOffer offer){
+        boolean good = false;
+        if (free && manDay <= offer.getManDay() && 
+                experience >= offer.getExperience() && 
+                education.compareTo(offer.getEducation()) >= 0 &&
+                area.equals(offer.getArea()) && 
+                platform.equals(offer.getPlatform()) &&
+                type.equals(offer.getType()))
+        {
+            good = true;
+            for (String certificate : offer.getCertificates()) {
+                if (!certificates.contains(certificate)){
+                    good = false;
+                    break;
+                }
+            }     
+        }
+        return good;
     }
     
     

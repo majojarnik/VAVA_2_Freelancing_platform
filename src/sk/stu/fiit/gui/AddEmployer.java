@@ -88,7 +88,7 @@ public class AddEmployer extends javax.swing.JFrame {
         getContentPane().add(lblNum, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 190, -1, -1));
 
         lblLogo.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
-        lblLogo.setText("Logo");
+        lblLogo.setText("Logo (150x150)");
         getContentPane().add(lblLogo, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 270, -1, -1));
         getContentPane().add(txfName, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, 330, -1));
         getContentPane().add(txfArea, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 140, 330, -1));
@@ -100,7 +100,7 @@ public class AddEmployer extends javax.swing.JFrame {
                 btnLogoMouseReleased(evt);
             }
         });
-        getContentPane().add(btnLogo, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 270, -1, -1));
+        getContentPane().add(btnLogo, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 270, -1, -1));
 
         btnAdd.setText("Pridať");
         btnAdd.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -119,7 +119,7 @@ public class AddEmployer extends javax.swing.JFrame {
         getContentPane().add(btnCancel, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 320, -1, -1));
 
         pnlLogo.setLayout(new java.awt.BorderLayout());
-        getContentPane().add(pnlLogo, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 250, 70, 70));
+        getContentPane().add(pnlLogo, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 250, 70, 70));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

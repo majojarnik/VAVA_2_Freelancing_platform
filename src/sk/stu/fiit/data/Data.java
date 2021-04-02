@@ -8,6 +8,7 @@ package sk.stu.fiit.data;
 import java.util.ArrayList;
 import java.util.List;
 import sk.stu.fiit.models.Employer;
+import sk.stu.fiit.models.JobOffer;
 import sk.stu.fiit.models.Lease;
 import sk.stu.fiit.models.employees.Specialist;
 
@@ -19,6 +20,7 @@ public class Data {
     private static List<Specialist> allSpecialists = new ArrayList<>();
     private static List<Employer> allEmployers = new ArrayList<>();
     private static List<Lease> allLease = new ArrayList<>();
+    private static List<JobOffer> allOffers = new ArrayList<>();
 
     public static List<Specialist> getAllSpecialists() {
         return allSpecialists;
@@ -42,6 +44,14 @@ public class Data {
 
     public static void setAllLease(List<Lease> aAllLease) {
         allLease = aAllLease;
+    }
+
+    public static List<JobOffer> getAllOffers() {
+        return allOffers;
+    }
+
+    public static void setAllOffers(List<JobOffer> allOffers) {
+        Data.allOffers = allOffers;
     }
     
     

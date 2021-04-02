@@ -7,19 +7,40 @@ package sk.stu.fiit.models.employees;
 
 import java.util.ArrayList;
 import java.util.List;
+import sk.stu.fiit.models.JobOffer;
 
 /**
  *
  * @author jarni
  */
 public abstract class Specialist {
+    String name;
+    String nationality;
+
+    
     double manDay;
     double experience;
     Education education;
     List<String> certificates;
-    boolean free;
+    boolean free = true;
     String type;
 
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getNationality() {
+        return nationality;
+    }
+
+    public void setNationality(String nationality) {
+        this.nationality = nationality;
+    }
+    
     public double getManDay() {
         return manDay;
     }
@@ -71,5 +92,7 @@ public abstract class Specialist {
     public abstract List<String> columnsTable();
     
     public abstract String[] rowsTable();
+    
+    public abstract boolean goodForPosition(JobOffer offer);
     
 }

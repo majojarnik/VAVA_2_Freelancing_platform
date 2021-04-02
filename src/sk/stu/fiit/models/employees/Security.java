@@ -7,6 +7,7 @@ package sk.stu.fiit.models.employees;
 
 import java.util.ArrayList;
 import java.util.List;
+import sk.stu.fiit.models.JobOffer;
 import sk.stu.fiit.models.employees.Specialist;
 
 /**
@@ -17,7 +18,9 @@ public class Security extends Specialist{
     private boolean NBU;
 
     
-    public Security(double manDay, double experience, Education education, List<String> certificates, boolean NBU) {
+    public Security(String name, String nationality, double manDay, double experience, Education education, List<String> certificates, boolean NBU) {
+        this.name = name;
+        this.nationality = nationality;
         this.manDay = manDay;
         this.experience = experience;
         this.education = education;
@@ -40,6 +43,7 @@ public class Security extends Specialist{
         this.NBU = NBU;
     }
     
+    @Override
     public String[] rowsTable(){
         String aud;
         if (NBU)
@@ -50,6 +54,7 @@ public class Security extends Specialist{
         return new String[] {String.valueOf(manDay), String.valueOf(experience), education.toString(), aud};
     }
     
+    @Override
     public List<String> columnsTable(){
         List<String> columns = new ArrayList<String>();
         
@@ -60,7 +65,26 @@ public class Security extends Specialist{
 
         return columns;
     }
-
+    
+    @Override
+    public boolean goodForPosition(JobOffer offer){
+        boolean good = false;
+        if (free && manDay <= offer.getManDay() && 
+                experience >= offer.getExperience() && 
+                education.compareTo(offer.getEducation()) >= 0 &&
+                Boolean.logicalOr(NBU, !offer.isNBU()) &&
+                type.equals(offer.getType()))
+        {
+            good = true;
+            for (String certificate : offer.getCertificates()) {
+                if (!certificates.contains(certificate)){
+                    good = false;
+                    break;
+                }
+            }     
+        }
+        return good;
+    }
     
     
 }

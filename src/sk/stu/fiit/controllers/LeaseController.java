@@ -59,6 +59,24 @@ public class LeaseController {
             System.out.println(spec.isFree());
         }
     }
+    
+    public void addLease(Employer empl, List<Specialist> specs){
+        System.out.println(empl);
+        System.out.println(specs);
+        
+        
+        for (Specialist spec: specs){
+            spec.setFree(false);
+        }
+        
+        Lease lease = new Lease(empl, specs);
+        
+        Data.getAllLease().add(lease);
+        
+        for (Specialist spec: Data.getAllSpecialists()){
+            System.out.println(spec.isFree());
+        }
+    }
 
     public void removeLease(int lease) throws BlankFields {
         if (lease < 0){

@@ -11,6 +11,8 @@ import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.imageio.ImageIO;
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
 import sk.stu.fiit.models.Employer;
 
 /**
@@ -26,7 +28,9 @@ public class EmployerProfile extends javax.swing.JFrame {
     
     public EmployerProfile(Employer emp) {
         logo = emp.getLogo();
+       
         initComponents();
+        jLabel1.setIcon(new ImageIcon(logo));
         //this.logo = emp.getLogo();
         lblName.setText(emp.getName());
         lblArea.setText(emp.getArea());
@@ -38,15 +42,6 @@ public class EmployerProfile extends javax.swing.JFrame {
         drawIm();*/
     }
     
-    public void drawIm(){
-        try{
-            pnlLogo.getGraphics().drawImage(logo, 0, 0, 70, 70, this);
-        }
-        catch(Exception e){
-            System.out.println("Chyba");
-        }
-
-    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -58,14 +53,15 @@ public class EmployerProfile extends javax.swing.JFrame {
     private void initComponents() {
 
         lblName = new javax.swing.JLabel();
-        pnlLogo = new javax.swing.JPanel();
         lblAreaText = new javax.swing.JLabel();
         lblArea = new javax.swing.JLabel();
         lblNumText = new javax.swing.JLabel();
         lblNum = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setMinimumSize(new java.awt.Dimension(350, 450));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         lblName.setFont(new java.awt.Font("sansserif", 1, 18)); // NOI18N
@@ -78,10 +74,7 @@ public class EmployerProfile extends javax.swing.JFrame {
                 lblNamePropertyChange(evt);
             }
         });
-        getContentPane().add(lblName, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 190, -1, -1));
-
-        pnlLogo.setLayout(new java.awt.BorderLayout());
-        getContentPane().add(pnlLogo, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 0, 190, 190));
+        getContentPane().add(lblName, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 200, -1, -1));
 
         lblAreaText.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
         lblAreaText.setText("Oblasť podnikania:");
@@ -106,14 +99,13 @@ public class EmployerProfile extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 360, -1, -1));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 20, 150, 150));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1MouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseReleased
-
-            drawIm();
-           
+        dispose();
     }//GEN-LAST:event_jButton1MouseReleased
 
     private void lblNamePropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_lblNamePropertyChange
@@ -159,11 +151,11 @@ public class EmployerProfile extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel lblArea;
     private javax.swing.JLabel lblAreaText;
     private javax.swing.JLabel lblName;
     private javax.swing.JLabel lblNum;
     private javax.swing.JLabel lblNumText;
-    private javax.swing.JPanel pnlLogo;
     // End of variables declaration//GEN-END:variables
 }

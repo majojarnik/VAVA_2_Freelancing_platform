@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import sk.stu.fiit.models.employees.Specialist;
 import java.util.List;
 import javax.swing.table.TableModel;
+import sk.stu.fiit.models.JobOffer;
 
 /**
  *
@@ -17,7 +18,9 @@ import javax.swing.table.TableModel;
 public class Programmer extends Specialist{
     private String area;
 
-    public Programmer(double manDay, double experience, Education education, List<String> certificates, String area) {
+    public Programmer(String name, String nationality, double manDay, double experience, Education education, List<String> certificates, String area) {
+        this.name = name;
+        this.nationality = nationality;
         this.manDay = manDay;
         this.experience = experience;
         this.education = education;
@@ -40,10 +43,12 @@ public class Programmer extends Specialist{
         this.area = area;
     }    
     
+    @Override
     public String[] rowsTable(){
         return new String[] {String.valueOf(manDay), String.valueOf(experience), education.toString(), area};
     }
     
+    @Override
     public List<String> columnsTable(){
         List<String> columns = new ArrayList<String>();
         
@@ -53,5 +58,25 @@ public class Programmer extends Specialist{
         columns.add("Zaradenie");
 
         return columns;
+    }
+    
+    @Override
+    public boolean goodForPosition(JobOffer offer){
+        boolean good = false;
+        if (free && manDay <= offer.getManDay() && 
+                experience >= offer.getExperience() && 
+                education.compareTo(offer.getEducation()) >= 0 &&
+                area.equals(offer.getArea()) &&
+                type.equals(offer.getType()))
+        {
+            good = true;
+            for (String certificate : offer.getCertificates()) {
+                if (!certificates.contains(certificate)){
+                    good = false;
+                    break;
+                }
+            }     
+        }
+        return good;
     }
 }
