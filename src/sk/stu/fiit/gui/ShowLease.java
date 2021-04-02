@@ -35,9 +35,9 @@ public class ShowLease extends javax.swing.JFrame {
         List<String> columns = new ArrayList<String>();;
      
         for (Specialist spec: specs){
-            values.add(new String[] {spec.getType(), String.valueOf(spec.getManDay()), String.valueOf(spec.getExperience()), spec.getEducation().toString()});
+            values.add(new String[] {spec.getName(), spec.getType(), String.valueOf(spec.getManDay()), String.valueOf(spec.getExperience()), spec.getEducation().toString()});
         }
-
+        columns.add("Meno");
         columns.add("Typ špecialistu");
         columns.add("Cena za deň");
         columns.add("Dĺžka praxe");

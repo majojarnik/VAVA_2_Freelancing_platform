@@ -5,24 +5,10 @@
  */
 package sk.stu.fiit.gui;
 
-import java.awt.Color;
-import java.awt.Font;
-import java.awt.FontMetrics;
-import java.awt.Graphics;
-import java.awt.Image;
-import java.awt.Rectangle;
-import java.awt.Shape;
 import java.awt.image.BufferedImage;
-import java.awt.image.ImageObserver;
-import java.io.File;
 import java.io.IOException;
-import java.text.AttributedCharacterIterator;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.imageio.ImageIO;
-import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
-import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import sk.stu.fiit.controllers.EmployerController;
@@ -128,8 +114,7 @@ public class AddEmployer extends javax.swing.JFrame {
     private BufferedImage logo = null;
     
     private void btnLogoMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnLogoMouseReleased
-        //ChooseLogo chooseLogo = new ChooseLogo(this);
-        //chooseLogo.setVisible(true);
+
         JFileChooser fileChooser = new JFileChooser();
         FileNameExtensionFilter filter = new FileNameExtensionFilter("JPEG, JPG, PNG, BMP, GIF", "jpeg", "jpg", "png", "bmp", "gif");
         fileChooser.setFileFilter(filter);
@@ -137,12 +122,10 @@ public class AddEmployer extends javax.swing.JFrame {
         if(value == JFileChooser.APPROVE_OPTION) {
             try {
                 this.logo = ImageIO.read(fileChooser.getSelectedFile());
-                System.out.println("Vyslo to");
                 pnlLogo.getGraphics().drawImage(this.logo, 0, 0, 70, 70, this);
                 
             } catch (IOException e) {
                 System.out.println(e);
-                System.out.println("Kdesi je chyba");
             }
         }
     }//GEN-LAST:event_btnLogoMouseReleased

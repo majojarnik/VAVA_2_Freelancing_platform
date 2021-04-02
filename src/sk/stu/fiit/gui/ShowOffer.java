@@ -5,6 +5,7 @@
  */
 package sk.stu.fiit.gui;
 
+import java.awt.Font;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JLabel;
@@ -47,10 +48,13 @@ public class ShowOffer extends javax.swing.JFrame {
         slblManDay.setText(String.valueOf(offer.getManDay()));
         slblEdu.setText(offer.getEducation().toString());
         slblExper.setText(String.valueOf(offer.getExperience()));
-        if (Boolean.logicalOr(offer.getType().equals("Programátor") , offer.getType().equals("Administrátor")))
+        if (Boolean.logicalOr(offer.getType().equals("Programátor") , offer.getType().equals("Administrátor"))){
             slblArea.setText(offer.getArea());
-        else if (offer.isNBU())
+        }
+        else if (offer.isNBU()){
             slblAreaOrNBU.setText("Je potrebné byť auditor kybernetickej bezpečnosti");
+            slblArea.setVisible(false);
+        }
         
         if (! offer.getType().equals("Administrátor"))
             lblPlatform.setVisible(false);
@@ -60,6 +64,7 @@ public class ShowOffer extends javax.swing.JFrame {
         for (String certificate : offer.getCertificates()) {
             JLabel lblNew = new JLabel();
             lblNew.setText(certificate);
+            lblNew.setFont(new Font("sansserif", Font.PLAIN, 14));
             spnlCerts.add(lblNew);
         }
         
@@ -147,7 +152,7 @@ public class ShowOffer extends javax.swing.JFrame {
         getContentPane().add(slblEdu, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 250, -1, -1));
 
         lblCertificates.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
-        lblCertificates.setText("Certifikáty");
+        lblCertificates.setText("Požadované certifikáty");
         getContentPane().add(lblCertificates, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 290, -1, -1));
 
         slblAreaOrNBU.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
@@ -180,11 +185,11 @@ public class ShowOffer extends javax.swing.JFrame {
         getContentPane().add(slblManDay, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 140, -1, -1));
 
         lblEdu1.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
-        lblEdu1.setText("Najvyššie dosiahnuté vzdelanie");
+        lblEdu1.setText("Minimálne vzdelanie");
         getContentPane().add(lblEdu1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 220, -1, -1));
 
         spnlCerts.setLayout(new javax.swing.BoxLayout(spnlCerts, javax.swing.BoxLayout.Y_AXIS));
-        getContentPane().add(spnlCerts, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 320, 290, 90));
+        getContentPane().add(spnlCerts, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 320, 290, 100));
 
         lblExper1.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
         lblExper1.setText("Dĺžka praxe:");

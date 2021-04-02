@@ -31,10 +31,7 @@ public class LeaseController {
         return list;
     }
     
-    public void addLease(int empl, int[] specs, String type) throws BlankFields{
-        System.out.println(empl);
-        System.out.println(specs);
-        
+    public void addLease(int empl, int[] specs, String type) throws BlankFields{      
         if (Boolean.logicalOr(empl < 0, specs.length == 0)){
             throw new BlankFields();
         }
@@ -43,7 +40,6 @@ public class LeaseController {
        
         List<Specialist> specialists = getListSpecialists(type);
         
-        System.out.println("Kde to padne");
         List<Specialist> selected = new ArrayList<>();
         
         for (Integer i: specs){
@@ -55,16 +51,9 @@ public class LeaseController {
         
         Data.getAllLease().add(lease);
         
-        for (Specialist spec: Data.getAllSpecialists()){
-            System.out.println(spec.isFree());
-        }
     }
     
     public void addLease(Employer empl, List<Specialist> specs){
-        System.out.println(empl);
-        System.out.println(specs);
-        
-        
         for (Specialist spec: specs){
             spec.setFree(false);
         }
@@ -73,9 +62,6 @@ public class LeaseController {
         
         Data.getAllLease().add(lease);
         
-        for (Specialist spec: Data.getAllSpecialists()){
-            System.out.println(spec.isFree());
-        }
     }
 
     public void removeLease(int lease) throws BlankFields {

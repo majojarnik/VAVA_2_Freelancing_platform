@@ -6,12 +6,6 @@
 package sk.stu.fiit.gui;
 
 import java.awt.image.BufferedImage;
-import java.io.File;
-import java.io.IOException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javax.imageio.ImageIO;
-import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import sk.stu.fiit.models.Employer;
 
@@ -31,15 +25,9 @@ public class EmployerProfile extends javax.swing.JFrame {
        
         initComponents();
         jLabel1.setIcon(new ImageIcon(logo));
-        //this.logo = emp.getLogo();
         lblName.setText(emp.getName());
         lblArea.setText(emp.getArea());
         lblNum.setText(String.valueOf(emp.getNumEmployees()));
-        //pnlLogo.getGraphics().drawLine(1, 1, 50, 50);
-        /*pnlLogo.getGraphics().drawImage(emp.getLogo(), 0, 0, 50, 50, this);
-        
-        this.logo = emp.getLogo();
-        drawIm();*/
     }
     
 
@@ -57,7 +45,7 @@ public class EmployerProfile extends javax.swing.JFrame {
         lblArea = new javax.swing.JLabel();
         lblNumText = new javax.swing.JLabel();
         lblNum = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        btnOK = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -69,11 +57,6 @@ public class EmployerProfile extends javax.swing.JFrame {
         lblName.setText("Tesla");
         lblName.setToolTipText("");
         lblName.setMaximumSize(new java.awt.Dimension(47, 20));
-        lblName.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
-            public void propertyChange(java.beans.PropertyChangeEvent evt) {
-                lblNamePropertyChange(evt);
-            }
-        });
         getContentPane().add(lblName, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 200, -1, -1));
 
         lblAreaText.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
@@ -92,27 +75,21 @@ public class EmployerProfile extends javax.swing.JFrame {
         lblNum.setText("X");
         getContentPane().add(lblNum, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 290, -1, -1));
 
-        jButton1.setText("OK");
-        jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+        btnOK.setText("OK");
+        btnOK.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseReleased(java.awt.event.MouseEvent evt) {
-                jButton1MouseReleased(evt);
+                btnOKMouseReleased(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 360, -1, -1));
+        getContentPane().add(btnOK, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 360, -1, -1));
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 20, 150, 150));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1MouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseReleased
+    private void btnOKMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnOKMouseReleased
         dispose();
-    }//GEN-LAST:event_jButton1MouseReleased
-
-    private void lblNamePropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_lblNamePropertyChange
-        System.out.println("Preco to do certa nejde");
-        //drawIm();
-        // TODO add your handling code here:
-    }//GEN-LAST:event_lblNamePropertyChange
+    }//GEN-LAST:event_btnOKMouseReleased
 
     /**
      * @param args the command line arguments
@@ -150,7 +127,7 @@ public class EmployerProfile extends javax.swing.JFrame {
 //    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton btnOK;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel lblArea;
     private javax.swing.JLabel lblAreaText;

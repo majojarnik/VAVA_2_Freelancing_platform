@@ -6,7 +6,6 @@
 package sk.stu.fiit.models;
 
 import java.awt.image.BufferedImage;
-import java.util.List;
 
 /**
  *

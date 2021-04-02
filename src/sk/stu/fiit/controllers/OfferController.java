@@ -22,7 +22,6 @@ import sk.stu.fiit.models.employees.Security;
 public class OfferController {
   
     public void addProgrammer(String numEmp, int employer, String manDay, String experience, String education, String area, List<String> certificates) throws BlankFields{
-        System.out.println("Tu si");
         if ("".equals(numEmp) || "".equals(manDay) || "".equals(experience) || "".equals(education) || "".equals(area)){
             throw new BlankFields();
         }
@@ -41,7 +40,6 @@ public class OfferController {
         catch (NumberFormatException e){
             throw e;
         }
-        System.out.println("Urobil som toto");
     }
     
         

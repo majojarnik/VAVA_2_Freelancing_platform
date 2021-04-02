@@ -53,13 +53,14 @@ public class Administrator extends Specialist{
     
     @Override
     public String[] rowsTable(){
-        return new String[] {String.valueOf(manDay), String.valueOf(experience), education.toString(), area, platform};
+        return new String[] {name, String.valueOf(manDay), String.valueOf(experience), education.toString(), area, platform};
     }
     
     @Override
     public List<String> columnsTable(){
         List<String> columns = new ArrayList<String>();
         
+        columns.add("Meno");
         columns.add("Cena za deň");
         columns.add("Dĺžka praxe");
         columns.add("Vzdelanie");

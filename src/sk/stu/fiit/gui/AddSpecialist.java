@@ -45,7 +45,6 @@ public class AddSpecialist extends javax.swing.JFrame {
     
     public void initOffer(){
         lblName.setText("Počet voľných miest");
-        //cmbNation.daj tu emaployer;
         lblHeading.setText("Pridanie ponuky");
         lblNation.setText("Zamestnávateľ");
         initEmpCombo();
@@ -71,7 +70,7 @@ public class AddSpecialist extends javax.swing.JFrame {
         txfName.setText(spec.getName());
         cmbNation.setSelectedItem(spec.getNationality());
         cmbType.setSelectedItem(spec.getType());
-        cmbEdu.setSelectedItem(spec.getEducation());
+        cmbEdu.setSelectedItem(spec.getEducation().toString());
         txfManDay.setText(String.valueOf(spec.getManDay()));
         txfExper.setText(String.valueOf(spec.getExperience()));
         
@@ -358,7 +357,6 @@ public class AddSpecialist extends javax.swing.JFrame {
         } catch(NumberFormatException e){
             JOptionPane.showMessageDialog(rootPane, "Cena za deň a dĺžka praxe musia byť kladné reálne čísla", "Nesprávny formát", JOptionPane.ERROR_MESSAGE);
         }
-        // TODO add your handling code here:
     }//GEN-LAST:event_btnAddMouseReleased
 
     private void btnCancelMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCancelMouseReleased
@@ -369,7 +367,6 @@ public class AddSpecialist extends javax.swing.JFrame {
         pnlCert.add(new JTextField());
         pnlCert.revalidate();
         pnlCert.repaint();
-        // TODO add your handling code here:
     }//GEN-LAST:event_btnAddCertMouseReleased
 
     /**

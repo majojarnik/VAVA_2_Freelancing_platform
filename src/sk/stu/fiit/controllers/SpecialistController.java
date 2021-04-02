@@ -23,7 +23,7 @@ public class SpecialistController {
     
     public void addProgrammer(String name, String nationality, String manDay, String experience, String education, String area, List<String> certificates) throws BlankFields{
         
-        if ("".equals(manDay) || "".equals(experience) || "".equals(education) || "".equals(area)){
+        if ("".equals(name) || "".equals(manDay) || "".equals(experience) || "".equals(education) || "".equals(area)){
             throw new BlankFields();
         }
         try {
@@ -44,7 +44,7 @@ public class SpecialistController {
     
      public void editProgrammer(Programmer prog,String name, String nationality, String manDay, String experience, String education, String area, List<String> certificates) throws BlankFields{
         
-        if ("".equals(manDay) || "".equals(experience) || "".equals(education) || "".equals(area)){
+        if ("".equals(name) || "".equals(manDay) || "".equals(experience) || "".equals(education) || "".equals(area)){
             throw new BlankFields();
         }
         try {
@@ -71,7 +71,7 @@ public class SpecialistController {
         
     public void addSecurity(String name, String nationality, String manDay, String experience, String education, boolean nbu, List<String> certificates) throws BlankFields{
         
-        if ("".equals(manDay) || "".equals(experience) || "".equals(education)){
+        if ("".equals(name) || "".equals(manDay) || "".equals(experience) || "".equals(education)){
             throw new BlankFields();
         }
         try {
@@ -93,7 +93,7 @@ public class SpecialistController {
     
     public void editSecurity(Security sec, String name, String nationality, String manDay, String experience, String education, boolean nbu, List<String> certificates) throws BlankFields{
         
-        if ("".equals(manDay) || "".equals(experience) || "".equals(education)){
+        if ("".equals(name) || "".equals(manDay) || "".equals(experience) || "".equals(education)){
             throw new BlankFields();
         }
         try {
@@ -121,7 +121,7 @@ public class SpecialistController {
         
     public void addAdministrator(String name, String nationality, String manDay, String experience, String education, String area, List<String> certificates, String platform) throws BlankFields{
         
-        if ("".equals(manDay) || "".equals(experience) || "".equals(education) || "".equals(area) || "".equals(platform)){
+        if ("".equals(name) || "".equals(manDay) || "".equals(experience) || "".equals(education) || "".equals(area) || "".equals(platform)){
             throw new BlankFields();
         }
         try {
@@ -142,7 +142,7 @@ public class SpecialistController {
     
     public void editAdministrator(Administrator admin, String name, String nationality, String manDay, String experience, String education, String area, List<String> certificates, String platform) throws BlankFields{
         
-        if ("".equals(manDay) || "".equals(experience) || "".equals(education) || "".equals(area) || "".equals(platform)){
+        if ("".equals(name) || "".equals(manDay) || "".equals(experience) || "".equals(education) || "".equals(area) || "".equals(platform)){
             throw new BlankFields();
         }
         try {
