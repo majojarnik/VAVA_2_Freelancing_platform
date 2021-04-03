@@ -49,6 +49,7 @@ public class Main {
         certif4.add("Neutrogena certificate");
         certif4.add("Adidas certificate");
         certif4.add("Python certificate");
+        certif4.add("Java certificate");
         
         List<String> certif5 = new ArrayList<String>();
         certif5.add("Python certificate");
@@ -89,7 +90,7 @@ public class Main {
         Data.getAllOffers().add(jobOffer2);
         JobOffer jobOffer3 = new JobOffer("Administrátor", 150.20, 0.5, Education.ZAKLADNE, certif2, "SAP", "Java", barneys, 5);
         Data.getAllOffers().add(jobOffer3); 
-        JobOffer jobOffer4 = new JobOffer("Programátor", 200.20, 3.6, Education.STREDNE_S, certif3, "Python", cnn, 2);
+        JobOffer jobOffer4 = new JobOffer("Programátor", 200.20, 3.6, Education.STREDNE_S, certif3, "Python", cnn, 3);
         Data.getAllOffers().add(jobOffer4);
         JobOffer jobOffer5 = new JobOffer("Bezpečnostný konzultant", 50.20, 15.5, Education.STREDNE_BEZ, certif3, false, amazon, 10);
         Data.getAllOffers().add(jobOffer5);
@@ -101,9 +102,9 @@ public class Main {
         // Programmers
         Specialist spec1 = new Programmer("Fero Mrkvička", "Slovenská", 150.20, 2.5, Education.STREDNE_S, certif1, "Java");
         Data.getAllSpecialists().add(spec1);
-        Specialist spec4 = new  Programmer("Jano Potočný", "Slovenská", 200.20, 3.6, Education.STREDNE_S, certif2, "Python");
+        Specialist spec4 = new  Programmer("Jano Potočný", "Slovenská", 150.20, 4.6, Education.STREDNE_S, certif4, "Python");
         Data.getAllSpecialists().add(spec4);
-        Specialist spec7 = new  Programmer("Róberta Absorbiná", "Slovenská", 150.20, 4.6, Education.STREDNE_BEZ, certif1, "Python");
+        Specialist spec7 = new  Programmer("Róberta Absorbiná", "Slovenská", 160.20, 5.8, Education.VYSOKE_3, certif1, "Python");
         Data.getAllSpecialists().add(spec7);
         
         // Securities
@@ -119,7 +120,7 @@ public class Main {
         Data.getAllSpecialists().add(spec6);
         Specialist spec3 = new Administrator("Rajec Bylinka", "Slovenská", 150.20, 0.5, Education.ZAKLADNE, certif4, "SAP", "Java");
         Data.getAllSpecialists().add(spec3);
-        Specialist spec9 = new Administrator("Schaffer Ostružinec", "Iná", 280.20, 7, Education.VYSOKE_2, certif5, "SAP", "Java");
+        Specialist spec9 = new Administrator("Schaffer Ostružinec", "Iná", 280.20, 7, Education.VYSOKE_2, certif1, "SAP", "Java");
         Data.getAllSpecialists().add(spec9);
         
         // Lease

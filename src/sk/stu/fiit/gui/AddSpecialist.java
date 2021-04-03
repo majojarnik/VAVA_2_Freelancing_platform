@@ -301,7 +301,7 @@ public class AddSpecialist extends javax.swing.JFrame {
                 txfPlatform.setVisible(true);
                 break;
             default:
-                System.out.println("Nejaka chybička");
+                System.out.println("Nejaka chyba");
                 break;
         }
           
@@ -357,6 +357,7 @@ public class AddSpecialist extends javax.swing.JFrame {
         } catch(NumberFormatException e){
             JOptionPane.showMessageDialog(rootPane, "Cena za deň a dĺžka praxe musia byť kladné reálne čísla", "Nesprávny formát", JOptionPane.ERROR_MESSAGE);
         }
+
     }//GEN-LAST:event_btnAddMouseReleased
 
     private void btnCancelMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCancelMouseReleased
